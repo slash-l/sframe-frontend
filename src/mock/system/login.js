@@ -1,0 +1,18 @@
+const Mock = require("mockjs");
+const settings = require("../../settings");
+
+const login = function() {
+  let adminJwt = {
+    access_token:
+      "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOiIxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJzY29wZSI6WyJBbnkiXSwiZXhwIjoxNTkxODAwMjc1LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjRhN2Y3NGMwLTVlYTUtNDMwZi1iNmJiLTBjMTM5MmE1MTI3MiIsImNsaWVudF9pZCI6ImNsaWVudGFwcCJ9.IVyfBJo1ZbgRRY93SxqvhMqc5THPJLpduB2oXKF2Ci-fGmg6hSTA-vL5D8o-VKfuvP91e5KAu0FdpCcaDZrLMA1Q4tjSDiCaruZaMru55ReEkZ_lMsRl7fcgWPyKjcoy8smrE0ebl67Q0Dd0FNtuy4hup3mGgfjqZ03j2MqLxuJplABv8C8CXZsvyv9Mnl4X2EyzzPsR88dXtOLERP6t3uCDCM2e-z_MZE5TcAur2lta60-vU5D0oP_QCfcAWzYWor7nOJVQylimM-8gjTy6r50n4fbNrrbwLJWbcF6sqw0cZTjPTCeAMMDkCbsXlf-TfWtcT7CN3oAxJeLGKb71tA",
+    token_type: "bearer",
+    refresh_token:
+      "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInVzZXJfaWQiOiIxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJzY29wZSI6WyJBbnkiXSwiYXRpIjoiNGE3Zjc0YzAtNWVhNS00MzBmLWI2YmItMGMxMzkyYTUxMjcyIiwiZXhwIjoxNTk0Mzg4Njc1LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6ImQwZWViNDRmLWZhYmQtNDU3NC05OTA0LWZhMDFiMWEyNjg4MCIsImNsaWVudF9pZCI6ImNsaWVudGFwcCJ9.IbNMGZdSUCuQTAN8CA4kMtayFhjRMeVQE1tosOljsHIA1JH-092DfaSWlN04gysbLQbD8tVh19ASjvJmHJpYmUQnYn1PucDXm9Frd7xvAzDLB6PZkLZ6vkgVdKUuLmeXrDeO_9F8GZamA7NbJFGb06vypZxmElu7cruh04FyYh-O4uPFpOK7x6-sBGc0iJV16I1ygjgYeffSQP0t9YVRUBvmTtdXu5R6_tr8WqNTUenRI1nw8PbqFlT5mpH8uxl0CJdlpjsJqXHRYbfMwVlv8DZXB49vFsLJl9sF6wft6k4cYbjS2yVj6kJ4hWBpE8KuWUOdm70j6a1M8dT1rVpvsA",
+    expires_in: 3599,
+    scope: "Any",
+    jti: "4a7f74c0-5ea5-430f-b6bb-0c1392a51272"
+  };
+  return adminJwt;
+};
+
+Mock.mock(settings.preUrl.sso + "/oauth/token", "post", login);
