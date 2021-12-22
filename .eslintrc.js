@@ -19,8 +19,12 @@ module.exports = {
     {
       files: [
         "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        "**/tests/unit/**/*.spec.{j,t}s?(x)",
+        'src/views/**/*.vue'
       ],
+      rules: {
+        'vue/multi-word-component-names': 0,
+      },
       env: {
         jest: true
       }
